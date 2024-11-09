@@ -12,7 +12,7 @@ class extends Migration
      */
     public function up(): void
     {
-        Schema::create('specification', function (Blueprint $table) {
+        Schema::create('car_specification', function (Blueprint $table) {
             $table->id();
             $table->string('complectation_id', 50)->unique();
             $table->string('front-brake', 100)->nullable();
@@ -78,6 +78,6 @@ class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('specification');
+        Schema::dropIfExists('car_specification');
     }
 };

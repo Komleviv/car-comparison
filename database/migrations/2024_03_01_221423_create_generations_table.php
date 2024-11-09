@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('generations', function (Blueprint $table) {
+        Schema::create('car_generations', function (Blueprint $table) {
             $table->id();
             $table->string('generation_id', 50)->unique();
             $table->string('generation_name', 50)->nullable();
@@ -23,7 +23,7 @@ return new class extends Migration
 
             $table->foreign('model_id')
                 ->references('id')
-                ->on('models')
+                ->on('car_models')
                 ->onDelete('cascade');
         });
     }
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('generations');
+        Schema::dropIfExists('car_generations');
     }
 };

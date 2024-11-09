@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('options', function (Blueprint $table) {
+        Schema::create('car_options', function (Blueprint $table) {
             $table->id();
             $table->string('complectation_id', 50)->unique();
             $table->string('alcantara', 100)->nullable();
@@ -181,6 +181,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('options');
+        Schema::dropIfExists('car_options');
     }
 };

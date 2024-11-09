@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('models', function (Blueprint $table) {
+        Schema::create('car_models', function (Blueprint $table) {
             $table->id();
             $table->string('model_id', 50);
             $table->string('model_name', 50);
@@ -24,7 +24,7 @@ return new class extends Migration
 
             $table->foreign('mark_id')
                 ->references('mark_id')
-                ->on('marks')
+                ->on('car_marks')
                 ->onDelete('cascade');
         });
     }
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('models');
+        Schema::dropIfExists('car_models');
     }
 };

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('modifications', function (Blueprint $table) {
+        Schema::create('car_modifications', function (Blueprint $table) {
             $table->id();
             $table->string('complectation_id', 50)->unique();
             $table->integer('modification_offers_price_from')->nullable();
@@ -22,7 +22,7 @@ return new class extends Migration
 
             $table->foreign('configuration_id')
                 ->references('configuration_id')
-                ->on('configurations')
+                ->on('car_configurations')
                 ->onDelete('cascade');
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('modifications');
+        Schema::dropIfExists('car_modifications');
     }
 };
