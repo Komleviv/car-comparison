@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('mark_cyrillic_name', 100);
             $table->tinyInteger('mark_popular')->nullable();
             $table->string('mark_concern')->nullable();
-            $table->string('mark_class')->nullable();
+            $table->string('mark_class', 50)->nullable();
             $table->string('mark_country', 50)->nullable();
             $table->timestamps();
         });

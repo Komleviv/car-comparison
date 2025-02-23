@@ -14,6 +14,8 @@ class CarMark extends Model
         'mark_name',
         'mark_cyrillic_name',
         'mark_popular',
+        'mark_concern',
+        'mark_class',
         'mark_country'
     ];
 }
